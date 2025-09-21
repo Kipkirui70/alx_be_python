@@ -1,14 +1,28 @@
-# weather_advice.py
+# match_case_calculator.py
 
-# Prompt user for input
-weather = input("What's the weather like today? (sunny/rainy/cold): ").lower()
+# Prompt user for numbers
+num1 = float(input("Enter the first number: "))
+num2 = float(input("Enter the second number: "))
 
-# Conditional checks
-if weather == "sunny":
-    print("Wear a t-shirt and sunglasses.")
-elif weather == "rainy":
-    print("Don't forget your umbrella and a raincoat.")
-elif weather == "cold":
-    print("Make sure to wear a warm coat and a scarf.")
-else:
-    print("Sorry, I don't have recommendations for this weather.")
+# Prompt user for operation
+operation = input("Choose the operation (+, -, *, /): ")
+
+# Perform calculation using match case
+match operation:
+    case "+":
+        result = num1 + num2
+        print(f"The result is {result}.")
+    case "-":
+        result = num1 - num2
+        print(f"The result is {result}.")
+    case "*":
+        result = num1 * num2
+        print(f"The result is {result}.")
+    case "/":
+        if num2 == 0:
+            print("Cannot divide by zero.")
+        else:
+            result = num1 / num2
+            print(f"The result is {result}.")
+    case _:
+        print("Invalid operation selected.")
