@@ -14,3 +14,4 @@ class Book:
 
     def __del__(self):
         print(f"Deleting {self.title}")
+ 
